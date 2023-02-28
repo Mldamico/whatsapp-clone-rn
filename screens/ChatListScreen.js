@@ -1,10 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-export default function ChatListScreen() {
+export default function ChatListScreen(props) {
   return (
     <View style={styles.container}>
       <Text>ChatListScreen</Text>
+      <Button
+        title="Go to settings"
+        onPress={() => {
+          props.navigation.navigate("ChatSetting");
+        }}
+      />
     </View>
   );
 }
