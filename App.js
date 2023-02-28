@@ -19,8 +19,12 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="ChatList" component={ChatListScreen} />
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen
+        name="ChatList"
+        component={ChatListScreen}
+        options={{ tabBarLabel: "Chats" }}
+      />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
@@ -70,7 +74,11 @@ export default function App() {
     <SafeAreaProvider style={styles.container} onLayout={onLayout}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={TabNavigator} />
+          <Stack.Screen
+            name="Home"
+            component={TabNavigator}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="ChatSetting"
             component={ChatSettingsScreen}
